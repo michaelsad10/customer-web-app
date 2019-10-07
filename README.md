@@ -1,5 +1,8 @@
 # customer-web-app
 
+# Requirements
+## Java 8
+
 # Git Best Practices
 ## Adding Features
 Create a branch off of master to add your features. Never push directly to master
