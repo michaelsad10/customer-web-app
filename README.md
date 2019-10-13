@@ -2,6 +2,12 @@
 
 # Requirements
 ## Java 8
+## Docker
+
+# Running This Application
+Run the command ```docker-compose up -d``` to start the database   
+Start the spring application   
+To stop the database, run ```docker-compose down```
 
 # Git Best Practices
 ## Adding Features
