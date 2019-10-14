@@ -21,8 +21,11 @@ public class CustomerController {
     @GetMapping("/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable Long id){
         Optional<Customer> customer = customerRepository.findById(id);
-
-        return customer.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(new Customer(), HttpStatus.NOT_FOUND));
+        if(customer.isPresent()) {
+            return new ResponseEntity<>(customer.get(), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(new Customer(), HttpStatus.NOT_FOUND);
+//        return customer.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(new Customer(), HttpStatus.NOT_FOUND));
     }
 
     @PostMapping("/create")
